@@ -1,15 +1,18 @@
 const {Router} = require("express");
-//const multer = require("multer");
+const multer = require("multer");
 
 const DishesController = require("../controllers/DishesController");
-//const ensureAuthenticated = require("../middlewares/ensureAuthenticated");
-//const uploadConfig = require("../configs/upload");
+const ensureAuthenticated = require("../middlewares/ensureAuthenticated");
+const uploadConfig = require("../configs/upload");
 
 const dishesRoutes = Router()
 
 const dishesController = new DishesController()
 
-//const uploadImage = multer(uploadConfig.MULTER)
+const uploadImage = multer(uploadConfig.MULTER)
+
+//dishesRoutes.use(ensureAuthenticated);
+
 
 dishesRoutes.post("/", dishesController.create)
 dishesRoutes.delete("/:id", dishesController.delete)
