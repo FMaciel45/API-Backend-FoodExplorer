@@ -1,23 +1,23 @@
-const {Router} = require("express");
+const { Router } = require("express");
 const multer = require("multer");
 
 const DishesController = require("../controllers/DishesController");
 const ensureAuthenticated = require("../middlewares/ensureAuthenticated");
 const uploadConfig = require("../configs/upload");
 
-const dishesRoutes = Router()
+const dishesRoutes = Router();
+const dishesController = new DishesController();
 
-const dishesController = new DishesController()
+const uploadImage = multer(uploadConfig.MULTER);
 
-const uploadImage = multer(uploadConfig.MULTER)
+dishesRoutes.use(ensureAuthenticated);
 
-//dishesRoutes.use(ensureAuthenticated);
+// Aplicando multer para processar o upload da imagem corretamente
+dishesRoutes.post("/", uploadImage.single("image"), dishesController.create);
+dishesRoutes.put("/:id", uploadImage.single("image"), dishesController.update);
 
-
-dishesRoutes.post("/", dishesController.create)
-dishesRoutes.delete("/:id", dishesController.delete)
-dishesRoutes.put("/:id", dishesController.update)
-dishesRoutes.get("/:id", dishesController.show)
+dishesRoutes.delete("/:id", dishesController.delete);
+dishesRoutes.get("/:id", dishesController.show);
 dishesRoutes.get("/", dishesController.index);
 
-module.exports = dishesRoutes
+module.exports = dishesRoutes;

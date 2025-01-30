@@ -1,6 +1,6 @@
 const path = require("path");
 const multer = require("multer");
-const crypto = require("crypto"); // criar hashes - p/ garantir que nenhum arquivo tenha o mesmo nome (evitar sobreposição)
+const crypto = require("crypto"); // criar hashes -> garantir que nenhum arquivo tenha o mesmo nome (evitar sobreposição)
 
 const TMP_FOLDER = path.resolve(__dirname, "..", "..", "tmp")
 
