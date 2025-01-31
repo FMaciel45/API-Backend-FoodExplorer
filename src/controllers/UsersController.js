@@ -1,7 +1,7 @@
-const {hash, compare} = require("bcryptjs")
+const {hash, compare} = require("bcryptjs");
 
-const AppError = require("../utils/AppError")
-const sqliteConnection = require("../database/SQLite")
+const AppError = require("../utils/AppError");
+const sqliteConnection = require("../database/SQLite");
 
 class UsersController {
 

@@ -9,7 +9,7 @@ const routes = Router()
 
 routes.use("/users", usersRoutes)
 routes.use("/sessions", sessionsRoutes)
-routes.use("/dishes", dishesRoutes);
+routes.use("/dishes", dishesRoutes)
 routes.use("/orders", ordersRoutes)
 
 module.exports = routes 

@@ -5,7 +5,6 @@ class OrdersController {
     const { components, orderStatus, totalPrice } = request.body;
     const userId = request.user.id;
 
-    // Validação de components
     if (!components || !Array.isArray(components)) {
       return response.status(400).json({ error: "Components must be a valid array." });
     }

@@ -1,144 +1,95 @@
-# Para iniciar o projeto: npm init -y
+## Sobre o projeto
 
-# Para instalar o Express: npm install express --save
+O projeto final Rocketseat FoodExplorer é uma aplicação web desenvolvida para um restaurante fictício. Nela, um usuário deve ter a capacidade de, ao se cadastrar na página e realizar o seu Login, criar novos pratos (caso seja um usuário **admin**), visualizar e editar esses pratos. Já caso o usuário seja um **customer**, ele deverá poder, ao se cadastrar na página e se autenticar, visualizar os pratos criados e adicioná-los aos seus pedidos. Além disso, todos os usuários possuem a capacidade de alterar seus perfis (avatar, nome, email e senha). Por fim, o projeto conta com telas responsivas a diversos aparelhos (mobile e desktop) para melhor experiência do usuário. 
 
-# Para instalar o Nodemon: npm install nodemon --save-dev
+## Como utilizar o projeto
+ 
+### Executando o Backend do projeto
 
-# SQLite, Express, Bcrypt e Nodemon não precisam ser instalados quando o projeto é puxado do Github, apenas o Node.js precisa
+```bash
 
-# Para instalar as dependências do Node.js (node_modules) sempre quando o projeto for puxado do Github
+  # Vá até o diretório do projeto
+  $ cd API-Backend-FoodExplorer
 
-### Comando no terminal
+  # Crie um arquivo .env e insira os valores desejados para:
+    AUTH_SECRET = /*Ex.: default*/
+    PORT = /*Ex.: 3333*/
 
-npm install
+  # Instale a dependência node_modules
+  $ npm install
 
-# Para rodar o servidor com Nodemon (deixar rodando em um terminal e usar outro para comandos)
+  # Inicie o servidor 
+  $ npm run dev
 
-### Comando no terminal
+  # Agora, com o frontend também aberto, basta utlizar a aplicação normalmente 
 
-npm run dev
+```
 
-# Biblioteca Express Async Errors instalada para tratamento de erros
+## Tecnologias utilizadas 
 
-### Comando no terminal
+- [NodeJS](https://nodejs.org/en)
+- [Javascript]()
+- [Nodemon](https://nodemon.io/)
+- [Express](https://expressjs.com/pt-br/)
+- [Express Async Errors](https://www.npmjs.com/package/express-async-errors)
+- [Insomnia](https://insomnia.rest/download)
+- [SQLite](https://www.sqlite.org/)
+- [KnexJS](https://knexjs.org/)
+- [BcryptJS](https://www.npmjs.com/package/bcryptjs)
+- [JSON Web Token (JWT)](https://www.npmjs.com/package/jsonwebtoken)
+- [Multer](https://www.npmjs.com/package/multer)
+- [Cors](https://www.npmjs.com/package/cors)
+- [Dotenv (.env)](https://www.npmjs.com/package/dotenv)
+- [PM2](https://pm2.keymetrics.io/)
 
-npm install express-async-errors --save
+### - NodeJS
 
-# Testes da API feitos pelo Insomnia (só funciona com o servidor rodando)
+É um ambiente de execução (ou Framework) JavaScript voltado ao lado do servidor (backend). 
 
-### Usar URL: localhost:3333/users
+### - Javascript
 
-### Insomnia configurado 
+Linguagem de programação de tipagem fraca (não exige que o tipo de uma variável ou função seja declarado quando ela é criada) amplamente utilizada para a criação de páginas Web. Pode ser utilizada tanto no frontend (ex.: ReactJS) quanto no backend (ex.: NodeJS).
 
-URL (BASE_URL) criada dentro do ambiente (dev) com base na URL mencionada acima para facilitar a testagem
+### - Nodemon
 
-# Para baixar o SQLite 
+Ferramenta de linha de comando utilizada para o desenvolvimento de aplicações NodeJS. Sua função é monitorar a aplicação e reiniciá-la quando forem detectadas alterações.
 
-### Comando no terminal
+### - Express
 
-npm install sqlite3 sqlite --save
+Framework NodeJS criado para otimizar a criação de aplicativos e APIs Web.
 
-### SGBD usado - Beekeeper Studio
+### - Express Async Errors
 
-### Comandos SQL usados
+Pacote responsável pelo tratamento de erros em aplicações Web.
 
-CREATE TABLE users (
-	id INTEGER PRIMARY KEY AUTOINCREMENT, 
-  name VARCHAR,
-  email VARCHAR,
-  password VARCHAR,
-  avatar VARCHAR NULL
-  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-)
+### - Insomnia
 
-INSERT INTO users 
-(name, email, password)
-VALUES
-('João', 'joaoe@gmail.com', '123');
+Aplicativo Web que permite o envio de solicitações HTTP a APIs Web para a otimização de sua testagem.
 
-SELECT * FROM users; // * = todos os elementos da tabela. Poderiam ser usados os atributos do elemento cadastrado: "id, name, email, ..."
+### - SQLite
 
-UPDATE users SET 
-avatar = 'felipe.png',
-name = 'Felipe Maciel'
-WHERE id = 1;
+É um banco de dados relacional de código aberto capaz de funcionar em aplicações Web e Mobile.
 
-DELETE FROM users 
-WHERE id = 3;
+### - KnexJS
 
-### AUTOINCREMENT => id é sempre autoincrementado. Independente se algum usuário foi excluído ou não, se o id do usuário for configurado como chave primária, ele sempre será único 
+É um Query Builder SQL para JavaScript que permite acessar e executar ações em bancos de dados.
 
-# Para criptografar senha do usuário cadastrado - biblioteca Bcryptjs
+### - BcryptJS
 
-### Comando no terminal
+É uma biblioteca voltada à criação de hashes seguros para a proteção de senhas, principalmente.
 
-npm install bcryptjs --save
+### - JSON Web Token (JWT)
 
-# Knex.js utilizado como query builder
+É um padrão de autenticação que permite a transmissão de informações de forma segura entre duas partes em uma aplicação Web. 
 
-### Comando no terminal
+### - Multer
 
-npm install knex --save
+Biblioteca NodeJS voltada à realização do upload de arquivos.  
 
-### Para configurar o Knex
+### - Dotenv (.env)
 
-npx knex init
+Arquivo oculto que contém variáveis de ambiente de uma aplicação Web. É usado para definir configurações que variam de acordo com o local em que a aplicação está sendo executada.
 
-Apagar comentários e deixar apenas o comando referente ao BD usado. Ex.: client: 'sqlite3'. Após isso, importar a biblioteca "path" e seguir o exemplo usado nesse projeto. Além disso, usar o "    useNullAsDefault: true", como usado nesse projeto
+### - PM2
 
-### Para criar as migrations dentro do Knex (seguir exemplo do projeto nos arquivos knexfile.js e do criado após o comando abaixo)
-
-Migrations - formato de versionar a base de dados. Migrations trabalham na manipulação da base de dados: crianto, alterando ou removendo (alternativa a fazer tudo manualmente).
-
-npx knex migrate:make (nome do arquivo) - para criar o arquivo da tabela
-
-npx knex migrate:latest / npm run migrate (adicionando "migrate": "knex migrate:latest" na aba "scripts" do arquivo .json) - para rodar a tabela e a inserir no BD
-
-Se der erro, apagar o arquivo criado do BD dentro do código, reiniciar a conexão com o BD no Beekeeper e rodar o último comando novamente
-
-# JWT (Json Web Token) usado para gerar o token de usuário na aplicação
-
-### Comando no terminal
-
-npm install jsonwebtoken
-
-# Biblioteca Multer para upload de imagens
-
-### Comando no terminal
-
-npm install multer
-
-# Biblioteca Cors para conectar o Backend com o Frontend
-
-### Comando no terminal
-
-npm install cors
-
-# Dotenv para criar variáveis de ambiente e lidar com dados sensíveis
-
-### Comando no terminal
-
-npm install dotenv --save
-
-### Usar MD5 hash generator para gerar a chave secreta para o token de autenticação
-
-# PM2 para manter a API on 24/7
-
-### Comando no terminal 
-
-npx pm2 init
-
-### Link para substituir no arquivo: https://pm2.keymetrics.io/docs/integrations/heroku/
-
-### Após substituir, usar o comando:
-
-npm install pm2
-
-### Após instalar o PM2, substituir o "start" em package.json pelo comando exibido em "Set your package.json"
-
-### Substituir o script por "./src/server.js" no ecossistema do PM2
-
-### Após tudo configurado, rodar a API com o comando:
-
-npm start
+Gerenciador de processos de código aberto que permite controlar aplicações NodeJS.
