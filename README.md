@@ -1,8 +1,30 @@
+<h1 align = "center">
+  <img src = "./src/assets/Logo.png">
+</h1>
+
 ## Sobre o projeto
 
 O projeto final Rocketseat FoodExplorer é uma aplicação web desenvolvida para um restaurante fictício. Nela, um usuário deve ter a capacidade de, ao se cadastrar na página e realizar o seu Login, criar novos pratos (caso seja um usuário **admin**), visualizar e editar esses pratos. Já caso o usuário seja um **customer**, ele deverá poder, ao se cadastrar na página e se autenticar, visualizar os pratos criados e adicioná-los aos seus pedidos. Além disso, todos os usuários possuem a capacidade de alterar seus perfis (avatar, nome, email e senha). Por fim, o projeto conta com telas responsivas a diversos aparelhos (mobile e desktop) para melhor experiência do usuário. 
 
 ## Como utilizar o projeto
+
+### Versão admin da aplicação
+
+```bash
+
+  # E-mail: felipe@admin.com
+  # senha: 123
+
+```
+
+### Versão customer (usuário comum) da aplicação
+
+```bash
+
+  # E-mail: joao@email.com
+  # senha: 123456
+
+```
  
 ### Executando o Backend do projeto
 
@@ -34,6 +56,7 @@ O projeto final Rocketseat FoodExplorer é uma aplicação web desenvolvida para
 - [Express Async Errors](https://www.npmjs.com/package/express-async-errors)
 - [Insomnia](https://insomnia.rest/download)
 - [SQLite](https://www.sqlite.org/)
+- [Beekeeper Studio](https://www.beekeeperstudio.io/)
 - [KnexJS](https://knexjs.org/)
 - [BcryptJS](https://www.npmjs.com/package/bcryptjs)
 - [JSON Web Token (JWT)](https://www.npmjs.com/package/jsonwebtoken)
@@ -69,6 +92,10 @@ Aplicativo Web que permite o envio de solicitações HTTP a APIs Web para a otim
 ### - SQLite
 
 É um banco de dados relacional de código aberto capaz de funcionar em aplicações Web e Mobile.
+
+### - Beekeeper Studio
+
+Ferramenta de gerenciamento de bancos de dados que permite a criação e a realização de consultas, gerenciar conexões e visualizar dados.
 
 ### - KnexJS
 
