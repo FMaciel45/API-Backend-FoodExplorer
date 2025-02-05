@@ -1,5 +1,5 @@
 {
-  "name": "api_node",
+  "name": "api_foodexplorer",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {

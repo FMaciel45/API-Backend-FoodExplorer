@@ -4,6 +4,7 @@ const multer = require("multer");
 const DishesController = require("../controllers/DishesController");
 const ensureAuthenticated = require("../middlewares/ensureAuthenticated");
 const uploadConfig = require("../configs/upload");
+const verifyUserAuthorization = require("../middlewares/verifyUserAuthorization");
 
 const dishesRoutes = Router()
 const dishesController = new DishesController()
@@ -12,10 +13,14 @@ const uploadImage = multer(uploadConfig.MULTER)
 
 dishesRoutes.use(ensureAuthenticated)
 
-dishesRoutes.post("/", uploadImage.single("image"), dishesController.create)
-dishesRoutes.put("/:id", uploadImage.single("image"), dishesController.update)
+// rotas restritas ao admin
 
-dishesRoutes.delete("/:id", dishesController.delete)
+dishesRoutes.post("/", verifyUserAuthorization("admin"), uploadImage.single("image"), dishesController.create)
+dishesRoutes.put("/:id", verifyUserAuthorization("admin"), uploadImage.single("image"), dishesController.update)
+dishesRoutes.delete("/:id", verifyUserAuthorization("admin"), dishesController.delete)
+
+// rotas para customer e admin
+
 dishesRoutes.get("/:id", dishesController.show)
 dishesRoutes.get("/", dishesController.index)
 

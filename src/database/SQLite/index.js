@@ -1,7 +1,7 @@
-const sqlite3 = require("sqlite3") // import
-const sqlite = require("sqlite") // import
+const sqlite3 = require("sqlite3");
+const sqlite = require("sqlite"); 
 
-const path = require("path") // import
+const path = require("path"); 
 
 async function sqliteConnection(){
   const database = await sqlite.open({
