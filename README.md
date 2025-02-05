@@ -64,6 +64,7 @@ O projeto final Rocketseat FoodExplorer é uma aplicação web desenvolvida para
 - [Cors](https://www.npmjs.com/package/cors)
 - [Dotenv (.env)](https://www.npmjs.com/package/dotenv)
 - [PM2](https://pm2.keymetrics.io/)
+- Cookie Parser
 
 ### - NodeJS
 
