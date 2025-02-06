@@ -1,10 +1,11 @@
 <h1 align = "center">
-  <img src = "./src/assets/Logo.png">
+  <img src = "./src/assets/Banner.png">
 </h1>
 
 ## Sobre o projeto
 
-O projeto final Rocketseat FoodExplorer é uma aplicação web desenvolvida para um restaurante fictício. Nela, um usuário deve ter a capacidade de, ao se cadastrar na página e realizar o seu Login, criar novos pratos (caso seja um usuário **admin**), visualizar e editar esses pratos. Já caso o usuário seja um **customer**, ele deverá poder, ao se cadastrar na página e se autenticar, visualizar os pratos criados e adicioná-los aos seus pedidos. Além disso, todos os usuários possuem a capacidade de alterar seus perfis (avatar, nome, email e senha). Por fim, o projeto conta com telas responsivas a diversos aparelhos (mobile e desktop) para melhor experiência do usuário. 
+O projeto final Rocketseat FoodExplorer é uma aplicação web desenvolvida para um restaurante fictício. Nela, todos os usuários devem ter a capacidade de se cadastrar na página e realizar o seu Login. Caso o usuário seja um ***admin***, ele terá a capacidade de, além de visualizar os pratos já cadastrados, criar novos e editá-los. Caso o usuário autenticado seja um ***customer***, ele terá a capacidade de, apenas, visualizar os pratos já cadastrados pelo ***admin*** da aplicação. Há, na aplicação, um menu lateral interativo ao lado esquerdo da página que possui uma barra de pesquisa, em que é possível filtrar os pratos cadastrados por nome e pelos seus ingredientes, e um botão (visível apenas ao usuário ***admin***), que o redireciona à página em que é possível criar os pratos novos para a aplicação. Além disso, todos os usuários podem alterar suas informações de perfil (avatar, nome, e-mail e senha) ao clicar no ícone de perfil no canto superior direito da tela. Por fim, a aplicação em questão foi construída com telas responsivas a diversos aparelhos (mobile e desktop) para melhorar a experiência do usuário.
+
 
 ## Como utilizar o projeto
 
@@ -64,7 +65,7 @@ O projeto final Rocketseat FoodExplorer é uma aplicação web desenvolvida para
 - [Cors](https://www.npmjs.com/package/cors)
 - [Dotenv (.env)](https://www.npmjs.com/package/dotenv)
 - [PM2](https://pm2.keymetrics.io/)
-- Cookie Parser
+- [Cookie Parser](https://www.npmjs.com/package/cookie-parser)
 
 ### - NodeJS
 
@@ -121,3 +122,7 @@ Arquivo oculto que contém variáveis de ambiente de uma aplicação Web. É usa
 ### - PM2
 
 Gerenciador de processos de código aberto que permite controlar aplicações NodeJS.
+
+### - Cookie Parser
+
+Analisador de cookies em solicitações HTTP. Utilizado, principalmente, para facilitar e melhorar a segurança do processo de autenticação do usuário.
