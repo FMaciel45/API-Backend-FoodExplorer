@@ -9,6 +9,12 @@ O projeto final Rocketseat FoodExplorer é uma aplicação web desenvolvida para
 
 ## Como utilizar o projeto
 
+### Link do deploy da aplicação
+
+https://sitefoodexplorer.netlify.app/
+
+Obs.: como a API está sendo hospedada em um provedor gratuito, após um período de inatividade ela é desligada, o que pode gerar um certo delay nas requisições. Diante disso, basta aguardar o reinício da mesma e utilizar a aplicação normalmente.
+
 ### Versão admin da aplicação
 
 ```bash
