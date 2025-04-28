@@ -37,6 +37,8 @@ Obs.: como a API está sendo hospedada em um provedor gratuito, após um períod
 
 ```bash
 
+  # Baixe o projeto do GitHub
+
   # Vá até o diretório do projeto
   $ cd API-Backend-FoodExplorer
 
